@@ -8097,11 +8097,16 @@ a.theme-btn-on-bg, .theme-btn-on-bg {
     width: 120px;
     border-radius: 4px; } }
 @media print {
+  .theme-bg-primary {
+    background-color: #434E5E; }
+
   .resume-wrapper {
     padding: 0px; }
 
   .resume-wrapper-inner {
     max-width: 100%; }
+    .resume-wrapper-inner .p-5 {
+      padding: 3rem 3rem 3rem 0 !important; }
 
   .resume-header {
     background: #434E5E !important;
@@ -8153,6 +8158,15 @@ a.theme-btn-on-bg, .theme-btn-on-bg {
     width: 16.666666666666664%; }
 
   .col-lg-1 {
-    width: 8.333333333333332%; } }
+    width: 8.333333333333332%; }
+
+  article:nth-child(2) {
+    page-break-after: always; }
+
+  .resume-section:nth-child(2) {
+    page-break-after: always; }
+
+  .shadow-lg {
+    box-shadow: 0 0 0 0 !important; } }
 
 /*# sourceMappingURL=pillar-1.css.map */
