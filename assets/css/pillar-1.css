@@ -8160,11 +8160,7 @@ a.theme-btn-on-bg, .theme-btn-on-bg {
   .col-lg-1 {
     width: 8.333333333333332%; }
 
-  article:nth-child(2) {
-    page-break-after: always; }
 
-  .resume-section:nth-child(2) {
-    page-break-after: always; }
 
   .shadow-lg {
     box-shadow: 0 0 0 0 !important; } }
