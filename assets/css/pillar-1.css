@@ -5190,6 +5190,9 @@ textarea.form-control-lg {
 .pb-5 {
   padding-bottom: 3rem !important; }
 
+.pb-6 {
+  padding-bottom: 5rem !important; }
+
 .ps-0 {
   padding-left: 0 !important; }
 
@@ -8005,7 +8008,8 @@ a.theme-btn-on-bg, .theme-btn-on-bg {
     background: #8d9aad; }
 
 .resume-section-content {
-  color: #58677c; }
+  color: #58677c;
+}
 
 .resume-timeline {
   padding-left: 2rem; }
@@ -8097,16 +8101,25 @@ a.theme-btn-on-bg, .theme-btn-on-bg {
     width: 120px;
     border-radius: 4px; } }
 @media print {
+  html, body {
+    background-color: #ffffff; /* Establece el color de fondo a blanco para la impresión */
+  }
+
+  .resume-section-content {
+    color: #58677c;
+    font-size: 0.9rem;
+  }
+
   .theme-bg-primary {
     background-color: #434E5E; }
 
   .resume-wrapper {
-    padding: 0px; }
+    padding: 0; }
 
   .resume-wrapper-inner {
     max-width: 100%; }
     .resume-wrapper-inner .p-5 {
-      padding: 3rem 3rem 3rem 0 !important; }
+      padding: 3rem 3rem 3rem !important; }
 
   .resume-header {
     background: #434E5E !important;
@@ -8116,10 +8129,9 @@ a.theme-btn-on-bg, .theme-btn-on-bg {
       width: auto;
       max-height: 220px; }
 
-  @page {
-    size: a4; }
+
   body {
-    min-width: 1000px !important; }
+    min-width: 1200px !important; }
 
   .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12 {
     float: left !important; }
@@ -8164,5 +8176,9 @@ a.theme-btn-on-bg, .theme-btn-on-bg {
 
   .shadow-lg {
     box-shadow: 0 0 0 0 !important; } }
+
+  .resume-timeline-item:nth-last-child(2) {
+    page-break-after: always; /* Crea un salto de página después del penúltimo artículo */
+  }
 
 /*# sourceMappingURL=pillar-1.css.map */
