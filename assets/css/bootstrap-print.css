@@ -1,0 +1,9 @@
+@media print {
+
+
+    /* Custom */
+    .resume-wrapper {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+}
