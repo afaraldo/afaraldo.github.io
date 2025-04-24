@@ -1,9 +1,281 @@
 @media print {
-
-
-    /* Custom */
+    /* General optimizations */
+    * {
+        -webkit-print-color-adjust: exact !important;
+        color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+    
+    body {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        background-color: #FFFFFF;
+    }
+    
+    /* Layout adjustments */
     .resume-wrapper {
-        padding-top: 0;
-        padding-bottom: 0;
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+        box-shadow: none !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+    }
+    
+    .resume-wrapper-inner {
+        box-shadow: none !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    
+    /* Header and links color optimization */
+    .resume-header {
+        background-color: #434E5E !important;
+        color: #FFFFFF !important;
+        padding: 5px !important;
+        margin: 0 !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+    
+    .resume-header .row {
+        width: 100% !important;
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    
+    .resume-picture-holder {
+        padding: 3px !important;
+        text-align: center !important;
+    }
+    
+    .resume-header .name,
+    .resume-header .title {
+        color: #FFFFFF !important;
+        margin-bottom: 2px !important;
+    }
+    
+    .resume-header .title {
+        font-size: 12pt !important;
+        margin-bottom: 3px !important;
+    }
+    
+    .resume-header .primary-info,
+    .resume-header .secondary-info {
+        padding: 3px !important;
+    }
+    
+    .resume-header a.text-link,
+    .resume-header .text-link {
+        color: #FFFFFF !important;
+        text-decoration: none !important;
+    }
+    
+    .resume-header .fa-container {
+        color: #FFFFFF !important;
+        background-color: rgba(255, 255, 255, 0.2) !important;
+    }
+    
+    .resume-header i,
+    .resume-header .fa-fw,
+    .resume-header .fa-container i {
+        color: #FFFFFF !important;
+    }
+    
+    .resume-header .list-unstyled li,
+    .resume-header .resume-social li {
+        margin-bottom: 1px !important;
+        font-size: 8pt !important;
+        color: #FFFFFF !important;
+    }
+    
+    /* Hide elements not needed in print */
+    .d-print-none, 
+    footer,
+    .resume-social li:last-child,
+    .hide-in-pdf {
+        display: none !important;
+    }
+    
+    /* Image optimization */
+    img.picture {
+        max-width: 80px !important;
+        height: auto !important;
+        border-radius: 50% !important;
+        border: 2px solid white !important;
+    }
+    
+    /* Layout optimizations - keep side-by-side columns */
+    @page {
+        size: A4 !important;
+        margin: 1cm !important; 
+    }
+    
+    /* Force Bootstrap grid to work in print */
+    @media print and (min-width: 992px) {
+        .col-lg-9 {
+            width: 68% !important;
+            max-width: 68% !important;
+            flex: 0 0 68% !important;
+            float: left !important;
+            display: block !important;
+            padding-right: 8px !important;
+        }
+        
+        .col-lg-3 {
+            width: 32% !important;
+            max-width: 32% !important;
+            flex: 0 0 32% !important;
+            float: right !important;
+            display: block !important;
+            padding-left: 5px !important;
+        }
+    }
+    
+    /* Explicitly force row layout */
+    .row {
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    
+    /* Reduce spacing */
+    .resume-section,
+    .resume-body,
+    .resume-timeline-item {
+        padding-top: 2px !important;
+        padding-bottom: 2px !important;
+        margin-bottom: 2px !important;
+    }
+    
+    .resume-section-title {
+        margin-bottom: 1px !important;
+        padding-bottom: 1px !important;
+    }
+    
+    .resume-section-content {
+        padding: 0 !important;
+    }
+    
+    .resume-body {
+        padding: 0.4rem !important;
+    }
+    
+    /* Optimize badges for print */
+    .badge {
+        border: 1px solid #666 !important;
+        color: #333 !important;
+        background-color: transparent !important;
+        margin: 1px !important;
+        padding: 1px 3px !important;
+    }
+    
+    /* Avoid text overflow */
+    p, li {
+        max-width: 100% !important;
+        overflow-wrap: break-word !important;
+        margin-bottom: 1px !important;
+    }
+    
+    /* Optimize links for print */
+    a, a:visited {
+        text-decoration: none !important;
+        color: #333 !important;
+    }
+    
+    /* Improve page breaks */
+    .resume-timeline-item {
+        page-break-inside: avoid !important;
+    }
+    
+    h1, h2, h3, h4 {
+        page-break-after: avoid !important;
+        margin-top: 0 !important;
+        margin-bottom: 1px !important;
+    }
+    
+    ul, ol {
+        page-break-before: avoid !important;
+        margin-top: 0 !important;
+        margin-bottom: 1px !important;
+        padding-left: 15px !important;
+    }
+    
+    .list-inline {
+        padding-left: 0 !important;
+    }
+    
+    /* Font size optimizations for print */
+    h1 { font-size: 14pt !important; }
+    h2 { font-size: 12pt !important; }
+    h3 { font-size: 10pt !important; }
+    h4 { font-size: 9pt !important; }
+    p, li { font-size: 8pt !important; }
+    .badge { font-size: 7pt !important; }
+    
+    /* Further reduce spacing for right column content */
+    .col-lg-3 .resume-section-title {
+        font-size: 11pt !important;
+        padding-bottom: 1px !important;
+        margin-bottom: 1px !important;
+    }
+    
+    .col-lg-3 .resume-section {
+        margin-bottom: 0.15rem !important;
+        padding-bottom: 0.15rem !important;
+    }
+    
+    .col-lg-3 .mb-5,
+    .col-lg-3 .mb-3,
+    .col-lg-3 .mb-4 {
+        margin-bottom: 0.15rem !important;
+    }
+    
+    .col-lg-3 .mb-2,
+    .col-lg-3 .mb-1 {
+        margin-bottom: 0 !important;
+    }
+    
+    .list-unstyled {
+        margin-bottom: 0 !important;
+    }
+    
+    /* Compress whitespace */
+    .mb-5, .mb-4, .mb-3 { margin-bottom: 0.2rem !important; }
+    .mb-2, .mb-1 { margin-bottom: 0.1rem !important; }
+    .p-5, .p-4, .p-3 { padding: 0.2rem !important; }
+    .p-2, .p-1 { padding: 0.1rem !important; }
+    .pb-3, .pb-2 { padding-bottom: 0.1rem !important; }
+    .mb-3, .mb-2 { margin-bottom: 0.1rem !important; }
+    .py-3, .py-2, .py-1 { padding-top: 0.1rem !important; padding-bottom: 0.1rem !important; }
+    .px-3, .px-2, .px-1 { padding-left: 0.1rem !important; padding-right: 0.1rem !important; }
+    .mt-3, .mt-2, .mt-1 { margin-top: 0.1rem !important; }
+    
+    /* Hide work items that are too old to fit in 2 pages */
+    .old-work-experience {
+        display: none !important;
+    }
+    
+    /* Reduce spacing for timeline items */
+    .resume-timeline-item-header {
+        margin-bottom: 1px !important;
+    }
+    
+    .resume-timeline-item-desc {
+        margin-top: 1px !important;
+        padding-top: 0 !important;
+    }
+    
+    .resume-timeline-item-desc-heading {
+        margin-top: 1px !important;
+        margin-bottom: 1px !important;
     }
 }

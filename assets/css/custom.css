@@ -1,0 +1,400 @@
+/* Badges style for screen display */
+.list-inline {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.list-inline-item {
+    margin-right: 6px;
+    margin-bottom: 10px;
+}
+
+/* Improve skills badges display in screen */
+.resume-skills-cat {
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+/* Skills section list improvements */
+.resume-skill-item .list-unstyled {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 1rem;
+}
+
+.resume-skill-item .list-unstyled li {
+    margin-bottom: 0;
+    flex: 0 0 auto;
+    min-width: 140px;
+}
+
+/* Header optimizations for all views */
+.resume-header {
+    padding-top: 1.5rem;
+}
+
+.resume-title {
+    font-size: 1.8rem;
+}
+
+.resume-header .name {
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.resume-header .title {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #ffffff;
+    text-shadow: 0 1px 1px rgba(0,0,0,0.3);
+}
+
+/* Contact icons styling */
+.resume-header .contact-icon {
+    width: 18px;
+    height: 18px;
+    margin-right: 8px;
+    vertical-align: middle;
+
+}
+
+.resume-header .social-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+.resume-header .list-unstyled li {
+    margin-bottom: 6px;
+}
+
+.resume-header .resume-social li {
+    margin-bottom: 8px;
+}
+
+.resume-header .text-link {
+    display: flex;
+    align-items: center;
+}
+
+/* Make profile image square in both web and PDF */
+.resume-header .picture {
+    object-fit: cover;
+}
+
+/* Custom text-link hover effect */
+.resume-header .text-link:hover {
+    text-decoration: underline;
+}
+
+/* Education section improvement */
+.resume-degree {
+    font-weight: 700 !important;
+}
+
+
+
+/* Print optimization */
+@media print {
+    @page {
+        size: A4;
+        margin: 1.2cm !important;
+    }
+    
+    /* Header optimization for PDF */
+    .resume-header {
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+        margin-bottom: 0 !important;
+    }
+
+    .resume-header .row {
+        margin: 0 !important;
+    }
+
+    .resume-header .row > .col, 
+    .resume-header .row > [class*="col-"] {
+        padding: 0.1rem !important;
+    }
+
+    .resume-header .p-4 {
+        padding: 0 !important;
+    }
+
+    .resume-title {
+        font-size: 1.3rem !important;
+        margin-bottom: 0.2rem !important;
+        font-weight: 600 !important;
+    }
+
+    .resume-tagline {
+        font-size: 0.9rem !important;
+        margin-bottom: 0.2rem !important;
+    }
+
+    .primary-info.col-auto {
+        display: block !important;
+        width: auto !important;
+        flex: 0 0 auto !important;
+        max-width: none !important;
+    }
+    
+    /* General print styles */
+    body {
+        font-size: 11pt !important;
+        line-height: 1.5 !important;
+    }
+    
+    .list-unstyled li {
+        margin-bottom: 0.5rem !important;
+    }
+    
+    h2.resume-section-title {
+        font-size: 16pt !important;
+        margin-bottom: 0.6rem !important;
+        padding-bottom: 0.4rem !important;
+    }
+    
+    h3 {
+        font-size: 14pt !important;
+        margin-bottom: 0.4rem !important;
+    }
+    
+    h4 {
+        font-size: 12pt !important;
+        margin-bottom: 0.4rem !important;
+    }
+    
+    .resume-body {
+        padding: 1rem !important;
+    }
+    
+    .resume-skill-item {
+        margin-bottom: 1rem !important;
+    }
+    
+    .resume-timeline-item {
+        padding-bottom: 0.7rem !important;
+    }
+    
+    .list-inline-item img {
+        height: 20px !important;
+        vertical-align: middle !important;
+        margin-right: 2px !important;
+    }
+    
+    .resume-timeline-item {
+        page-break-inside: avoid !important;
+        margin-bottom: 1rem !important;
+    }
+    
+    .resume-section-title {
+        page-break-after: avoid !important;
+    }
+    
+    p {
+        margin-bottom: 0.7rem !important;
+        font-size: 11pt !important;
+    }
+    
+    li {
+        font-size: 11pt !important;
+        margin-bottom: 0.3rem !important;
+    }
+    
+    .col-lg-9 {
+        width: 69% !important;
+        max-width: 69% !important;
+        flex: 0 0 69% !important;
+        padding-right: 10px !important;
+    }
+    
+    .col-lg-3 {
+        width: 31% !important;
+        max-width: 31% !important;
+        flex: 0 0 31% !important;
+    }
+    
+    .resume-wrapper {
+        padding: 0 !important;
+        box-shadow: none !important;
+    }
+    
+    .resume-wrapper-inner {
+        max-width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        box-shadow: none !important;
+    }
+    
+    .old-work-experience {
+        display: none !important;
+    }
+
+    /* Adjust skills list for print */
+    .list-inline {
+        margin-top: 0.3rem !important;
+    }
+    
+    /* More header optimizations for print */
+    .resume-header .picture {
+        width: 80px !important;
+        height: 80px !important;
+        object-fit: cover !important;
+        display: block !important;
+        margin: 0 auto !important;
+    }
+    
+    .resume-header .resume-picture-holder {
+        text-align: center !important;
+        padding: 0.2rem !important;
+    }
+    
+    .resume-header .secondary-info,
+    .resume-header .primary-info {
+        padding: 0 !important;
+    }
+    
+    .resume-header .name {
+        font-size: 18pt !important;
+        letter-spacing: 0.5px !important;
+        margin-bottom: 0.3rem !important;
+    }
+    
+    .resume-social.list-unstyled li {
+        margin-bottom: 0.2rem !important;
+    }
+    
+    .resume-header .title {
+        font-size: 13pt !important;
+        margin-bottom: 0.4rem !important;
+        font-weight: 600 !important;
+        color: #000000 !important;
+        text-shadow: none !important;
+    }
+    
+    /* Contact information optimization for print */
+    .resume-header .list-unstyled li {
+        margin-bottom: 0.25rem !important;
+        font-size: 10pt !important;
+        line-height: 1.3 !important;
+    }
+    
+    .resume-header .resume-social li {
+        margin-bottom: 0.25rem !important;
+        font-size: 10pt !important;
+    }
+    
+    .resume-header .contact-icon,
+    .resume-header .social-icon {
+        display: inline-block !important;
+        width: 14px !important;
+        height: 14px !important;
+        margin-right: 4px !important;
+    }
+    
+    .resume-header .fa-container {
+        width: 20px !important;
+        height: 20px !important;
+    }
+    
+    .resume-header .fa-fw {
+        width: 1em !important;
+    }
+    
+    .resume-header .text-link {
+        display: flex !important;
+        align-items: center !important;
+    }
+
+    /* Resume content optimization */
+    .resume-section-content {
+        margin-bottom: 1rem !important;
+    }
+    
+    .resume-timeline-item-header {
+        margin-bottom: 0.4rem !important;
+    }
+    
+    .resume-position-time {
+        font-size: 10pt !important;
+        font-weight: 500 !important;
+    }
+    
+    .resume-company-name {
+        font-size: 11pt !important;
+        font-weight: 500 !important;
+    }
+    
+    /* Education section for print */
+    .resume-degree {
+        font-size: 12pt !important;
+        margin-bottom: 0.2rem !important;
+    }
+    
+    .resume-degree-org {
+        font-size: 11pt !important;
+    }
+    
+    .resume-degree-time {
+        font-size: 10pt !important;
+    }
+
+    /* Improve skill section for print */
+    .resume-skill-item {
+        margin-bottom: 1.2rem !important;
+    }
+    
+    .resume-skills-cat {
+        font-size: 12pt !important;
+        margin-bottom: 0.5rem !important;
+        color: #333 !important;
+    }
+    
+    /* Improve list styling for print */
+    ul {
+        padding-left: 1.2rem !important;
+    }
+    
+    /* Improve text contrast for better readability */
+    .resume-body {
+        color: #000 !important;
+    }
+    
+    .text-muted {
+        color: #444 !important;
+    }
+    
+    /* Ensure badges are visible */
+    .list-inline img {
+        max-height: 22px !important;
+        display: inline-block !important;
+    }
+
+    /* Reduce some margins for better space usage */
+    .resume-body {
+        padding: 1rem !important;
+    }
+    
+    .resume-section {
+        margin-bottom: 1.5rem !important;
+    }
+    
+    /* Ensure good contrast for links */
+    a, .text-link {
+        text-decoration: underline;
+    }
+    
+    /* Ensure badges and technologies are clear */
+    .list-inline {
+        margin-top: 0.3rem !important;
+    }
+    
+    /* Make important text stand out */
+    strong {
+        font-weight: 700 !important;
+    }
+} 
