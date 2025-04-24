@@ -100,14 +100,14 @@
 @media print {
     @page {
         size: A4;
-        margin: 1.2cm !important;
+        margin: 1.0cm !important;
     }
     
     /* Header optimization for PDF */
     .resume-header {
-        padding-top: 0 !important;
-        padding-bottom: 0 !important;
-        margin-bottom: 0 !important;
+        padding-top: 0.5rem !important;
+        padding-bottom: 0.5rem !important;
+        margin-bottom: 0.5rem !important;
     }
 
     .resume-header .row {
@@ -116,22 +116,22 @@
 
     .resume-header .row > .col, 
     .resume-header .row > [class*="col-"] {
-        padding: 0.1rem !important;
+        padding: 0.2rem !important;
     }
 
     .resume-header .p-4 {
-        padding: 0 !important;
+        padding: 0.5rem !important;
     }
 
     .resume-title {
-        font-size: 1.3rem !important;
-        margin-bottom: 0.2rem !important;
+        font-size: 1.5rem !important;
+        margin-bottom: 0.3rem !important;
         font-weight: 600 !important;
     }
 
     .resume-tagline {
-        font-size: 0.9rem !important;
-        margin-bottom: 0.2rem !important;
+        font-size: 1rem !important;
+        margin-bottom: 0.3rem !important;
     }
 
     .primary-info.col-auto {
@@ -144,11 +144,11 @@
     /* General print styles */
     body {
         font-size: 11pt !important;
-        line-height: 1.5 !important;
+        line-height: 1.4 !important;
     }
     
     .list-unstyled li {
-        margin-bottom: 0.5rem !important;
+        margin-bottom: 0.4rem !important;
     }
     
     h2.resume-section-title {
@@ -172,22 +172,22 @@
     }
     
     .resume-skill-item {
-        margin-bottom: 1rem !important;
+        margin-bottom: 0.8rem !important;
     }
     
     .resume-timeline-item {
-        padding-bottom: 0.7rem !important;
+        padding-bottom: 0.6rem !important;
     }
     
     .list-inline-item img {
-        height: 20px !important;
+        height: 22px !important;
         vertical-align: middle !important;
-        margin-right: 2px !important;
+        margin-right: 3px !important;
     }
     
     .resume-timeline-item {
         page-break-inside: avoid !important;
-        margin-bottom: 1rem !important;
+        margin-bottom: 0.8rem !important;
     }
     
     .resume-section-title {
@@ -195,7 +195,7 @@
     }
     
     p {
-        margin-bottom: 0.7rem !important;
+        margin-bottom: 0.6rem !important;
         font-size: 11pt !important;
     }
     
@@ -204,17 +204,18 @@
         margin-bottom: 0.3rem !important;
     }
     
+    /* Layout adjustments to make PDF more like web */
     .col-lg-9 {
-        width: 69% !important;
-        max-width: 69% !important;
-        flex: 0 0 69% !important;
-        padding-right: 10px !important;
+        width: 70% !important;
+        max-width: 70% !important;
+        flex: 0 0 70% !important;
+        padding-right: 12px !important;
     }
     
     .col-lg-3 {
-        width: 31% !important;
-        max-width: 31% !important;
-        flex: 0 0 31% !important;
+        width: 30% !important;
+        max-width: 30% !important;
+        flex: 0 0 30% !important;
     }
     
     .resume-wrapper {
@@ -240,21 +241,18 @@
     
     /* More header optimizations for print */
     .resume-header .picture {
-        width: 80px !important;
-        height: 80px !important;
         object-fit: cover !important;
-        display: block !important;
-        margin: 0 auto !important;
+        border-radius: 0 !important;
     }
     
     .resume-header .resume-picture-holder {
         text-align: center !important;
-        padding: 0.2rem !important;
+        padding: 0.3rem !important;
     }
     
     .resume-header .secondary-info,
     .resume-header .primary-info {
-        padding: 0 !important;
+        padding: 0.2rem !important;
     }
     
     .resume-header .name {
@@ -282,8 +280,9 @@
     .resume-header .contact-icon,
     .resume-header .social-icon {
         display: inline-block !important;
-        width: 14px !important;
-        height: 14px !important;
+        width: 16px !important;
+        height: 16px !important;
+        margin-right: 6px !important;
     }
     
     .resume-header .fa-container {
@@ -302,7 +301,7 @@
 
     /* Resume content optimization */
     .resume-section-content {
-        margin-bottom: 1rem !important;
+        margin-bottom: 0.8rem !important;
     }
     
     .resume-timeline-item-header {
@@ -335,12 +334,13 @@
 
     /* Improve skill section for print */
     .resume-skill-item {
-        margin-bottom: 1.2rem !important;
+        margin-bottom: 1rem !important;
     }
     
     .resume-skills-cat {
-        font-size: 12pt !important;
-        margin-bottom: 0.5rem !important;
+        font-size: 13pt !important;
+        margin-bottom: 0.4rem !important;
+        font-weight: 600 !important;
         color: #333 !important;
     }
     
@@ -361,21 +361,16 @@
 
     /* Reduce some margins for better space usage */
     .resume-body {
-        padding: 1rem !important;
+        padding: 0.8rem !important;
     }
     
     .resume-section {
-        margin-bottom: 1.5rem !important;
+        margin-bottom: 1.2rem !important;
     }
     
     /* Ensure good contrast for links */
     a, .text-link {
         text-decoration: underline;
-    }
-    
-    /* Ensure badges and technologies are clear */
-    .list-inline {
-        margin-top: 0.3rem !important;
     }
     
     /* Make important text stand out */
@@ -395,12 +390,53 @@
     }
     
     .picture {
-        width: 150px !important;
-        height: 150px !important;
+        width: 120px !important;
+        height: 120px !important;
         object-fit: cover !important;
     }
     
     .resume-wrapper-inner {
         max-width: 100% !important;
+    }
+
+    /* Ensure Work Experience and Skills are on first page */
+    #work-section, #skills-section {
+        page-break-inside: avoid !important;
+    }
+    
+    /* Force other sections to start on a new page */
+    #education-section, #projects-section, #languages-section, #interests-section {
+        page-break-before: always !important;
+    }
+    
+    /* Compact the first page content to fit work and skills */
+    .resume-header {
+        margin-bottom: 0.4rem !important;
+    }
+    
+    /* Make skill section more compact */
+    .resume-skill-item .list-unstyled {
+        margin-bottom: 0.5rem !important;
+        gap: 6px !important;
+    }
+    
+    /* Reduce space in work experience items */
+    #work-section .resume-timeline-item {
+        padding-bottom: 0.5rem !important;
+        margin-bottom: 0.7rem !important;
+    }
+
+    /* Ensure consistent heading sizes for all sections */
+    h2.resume-section-title {
+        font-size: 16pt !important;
+        margin-bottom: 0.6rem !important;
+        padding-bottom: 0.4rem !important;
+    }
+    
+    /* Specifically target skills section to match work experience */
+    #skills-section .resume-section-title,
+    #work-section .resume-section-title {
+        font-size: 16pt !important;
+        font-weight: 600 !important;
     }
 } 
