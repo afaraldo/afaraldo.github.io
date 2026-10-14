@@ -45,10 +45,9 @@
 }
 
 .resume-header .title {
-    font-size: 1.2rem;
+    font-size: 1.15rem;
     font-weight: 500;
     color: #ffffff;
-    text-shadow: 0 1px 1px rgba(0,0,0,0.3);
 }
 
 /* Contact icons styling */
@@ -440,3 +439,236 @@
         font-weight: 600 !important;
     }
 } 
+
+/* ---- Typography: system fonts only (no web font download, nothing extra embedded in the PDF) ---- */
+body {
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+    font-size: 0.97rem;
+    line-height: 1.6;
+}
+
+/* ---- Section titles ---- */
+.resume-section-title {
+    font-size: 1.05rem;
+    letter-spacing: 0.08em;
+}
+
+/* ---- About: lead paragraph reads as the pitch, the rest as support ---- */
+/* Wide screens: the pitch on the left, supporting paragraphs on the right */
+@media screen and (min-width: 992px) {
+    .summary-section .resume-section-content {
+        display: grid;
+        grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+        column-gap: 3rem;
+        align-items: start;
+    }
+
+    .summary-section .resume-section-content p {
+        margin-bottom: 1rem;
+    }
+
+    .summary-section .resume-section-content p:first-child {
+        grid-row: 1 / span 2;
+        font-size: 1.3rem;
+        line-height: 1.5;
+        margin-bottom: 0;
+    }
+
+    .summary-section .resume-section-content p:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.summary-section p:first-child {
+    font-size: 1.12rem;
+    line-height: 1.55;
+}
+
+.resume-position-time {
+    font-variant-numeric: tabular-nums;
+}
+
+/* ---- Technology chips (plain text, replaces remote shields.io images) ---- */
+.chip {
+    display: inline-block;
+    padding: 0.12rem 0.55rem;
+    border: 1px solid #cfd5dd;
+    border-radius: 999px;
+    background: #f4f6f8;
+    color: #2f3a48;
+    font-size: 0.78rem;
+    font-weight: 500;
+    line-height: 1.5;
+    white-space: nowrap;
+}
+
+.list-inline > li,
+.resume-skill-item .list-unstyled > li {
+    margin: 0;
+}
+
+.resume-skill-item .list-unstyled li {
+    min-width: 0;
+}
+
+@media print {
+    .chip {
+        font-size: 8.5pt !important;
+        padding: 0 0.4rem !important;
+        background: #f1f3f5 !important;
+    }
+
+    body {
+        font-family: Arial, "Helvetica Neue", Helvetica, sans-serif !important;
+    }
+
+    .summary-section p:first-child {
+        font-size: 11.5pt !important;
+    }
+
+    .summary-section .resume-section-content {
+        display: block !important;
+    }
+
+    .list-inline {
+        gap: 4px !important;
+    }
+}
+
+/* ---- Print: compact two-page layout, wide main column, sidebar rides alongside ---- */
+@media print {
+    @page { margin: 0.8cm !important; }
+
+    html body { font-size: 9.5pt !important; line-height: 1.32 !important; }
+    html body p, html body li { font-size: 9.5pt !important; line-height: 1.32 !important; margin-bottom: 0.15rem !important; }
+
+    html body .resume-body { padding: 0.5rem 0.7rem !important; }
+    html body .resume-section { margin-bottom: 0.5rem !important; }
+    html body .resume-section.mb-5 { margin-bottom: 0.5rem !important; }
+    html body h2.resume-section-title { font-size: 12pt !important; margin-bottom: 0.35rem !important; padding-bottom: 0.2rem !important; }
+    html body h3, html body .resume-position-title { font-size: 11pt !important; margin-bottom: 0.1rem !important; }
+    html body h4, html body .resume-timeline-item-desc-heading { font-size: 9.5pt !important; margin: 0.25rem 0 0.1rem !important; }
+    html body .resume-skills-cat { font-size: 10pt !important; margin: 0.25rem 0 0.15rem !important; }
+
+    html body .summary-section p:first-child { font-size: 10.5pt !important; }
+    html body .summary-section p { margin-bottom: 0.3rem !important; }
+
+    html body .resume-timeline-item { padding-bottom: 0.1rem !important; margin-bottom: 0.35rem !important; page-break-inside: auto !important; }
+    html body .resume-timeline-item-desc ul { margin-bottom: 0.2rem !important; padding-left: 1.1rem !important; }
+    html body .resume-timeline-item-header { margin-bottom: 0.15rem !important; }
+    html body .resume-position-time { font-size: 9pt !important; }
+
+    html body .chip { font-size: 7.5pt !important; padding: 0 0.35rem !important; }
+    html body .list-inline { gap: 3px !important; margin-bottom: 0.2rem !important; }
+    html body .list-inline > li { margin: 0 !important; }
+
+    /* Main column wider, sidebar narrower, both start at the same height */
+    html body .resume-body > .row { display: flex !important; flex-wrap: nowrap !important; align-items: flex-start !important; }
+    html body .col-lg-9 { flex: 0 0 72% !important; width: 72% !important; max-width: 72% !important; padding-right: 10px !important; }
+    html body .col-lg-3 { flex: 0 0 28% !important; width: 28% !important; max-width: 28% !important; }
+
+    /* No forced page breaks: let content flow */
+    html body #education-section, html body #projects-section, html body #languages-section, html body #interests-section { page-break-before: auto !important; }
+}
+
+@media print {
+    html body .col-lg-3 .resume-degree { font-size: 9.5pt !important; line-height: 1.25 !important; margin-bottom: 0.1rem !important; }
+    html body .col-lg-3 .resume-degree-org { font-size: 9pt !important; }
+    html body .col-lg-3 .resume-degree-time,
+    html body .col-lg-3 .resume-lang-name + small { font-size: 8.5pt !important; }
+    html body .col-lg-3 .resume-timeline-item { margin-bottom: 0.3rem !important; }
+}
+
+/* ---- Country flags ---- */
+.flag {
+    width: 24px;
+    height: 18px;
+    margin: 0 4px;
+    vertical-align: -3px;
+    border-radius: 2px;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.18);
+}
+
+@media print {
+    html body .flag { width: 22px !important; height: 16px !important; vertical-align: -3px !important; }
+}
+
+/* ---- Experience header: role on the left, company (+ flag) on the right, same line ---- */
+.resume-timeline-item-header > .d-flex {
+    flex-direction: row !important;
+    flex-wrap: wrap;
+    align-items: baseline;
+    column-gap: 1rem;
+}
+
+.resume-company-name {
+    margin-left: auto;
+    white-space: nowrap;
+}
+
+.resume-company-name .flag {
+    margin: 0 0 0 6px;
+    vertical-align: -3px;
+}
+
+/* ---- Print / PDF: ATS-friendly. Single column, linear reading order, plain-text skills, no photo ---- */
+@media print {
+    html body .resume-picture-holder { display: none !important; }
+
+    html body .resume-header .row,
+    html body .resume-header .row > .col { display: block !important; width: 100% !important; }
+    html body .resume-header .row > .col > .row { display: block !important; padding: 0.4rem 0.7rem !important; }
+    html body .resume-header .primary-info,
+    html body .resume-header .secondary-info { display: block !important; width: 100% !important; max-width: none !important; margin: 0 !important; padding: 0 !important; }
+    html body .resume-header ul.list-unstyled { display: flex !important; flex-wrap: wrap !important; column-gap: 1.1rem !important; margin: 0 0 0.1rem !important; }
+    html body .resume-header ul.list-unstyled li { margin: 0 !important; }
+
+    /* One column: experience, projects, then skills, education, awards, languages, interests */
+    html body .resume-body > .row { display: block !important; }
+    html body .col-lg-9, html body .col-lg-3 { flex: none !important; width: 100% !important; max-width: 100% !important; padding: 0 !important; }
+
+    /* Chips become plain comma-separated text */
+    html body .chip { border: 0 !important; background: none !important; padding: 0 !important; border-radius: 0 !important; font-size: 9.5pt !important; color: inherit !important; white-space: normal !important; }
+    html body .list-inline, html body .resume-skill-item .list-unstyled { display: block !important; margin: 0 0 0.2rem !important; }
+    html body .list-inline > li, html body .resume-skill-item .list-unstyled > li { display: inline !important; }
+    html body .list-inline > li:not(:last-child)::after,
+    html body .resume-skill-item .list-unstyled > li:not(:last-child)::after { content: ", "; }
+    html body .resume-skills-cat { display: inline !important; margin-right: 0.3rem !important; }
+    html body .resume-skills-cat::after { content: ":"; }
+    html body .resume-skill-item { margin-bottom: 0.15rem !important; }
+    html body .resume-timeline-item-desc-heading + .list-inline { display: inline !important; }
+}
+
+@media print {
+    html body .interests-section ul > li,
+    html body .language-section ul > li { display: inline !important; }
+    html body .interests-section ul > li:not(:last-child)::after,
+    html body .language-section ul > li:not(:last-child)::after { content: " · "; }
+    html body .resume-section { margin-bottom: 0.4rem !important; }
+    html body .resume-timeline-item-desc ul { margin-bottom: 0.1rem !important; }
+}
+
+@media print {
+    html body .list-inline > li:not(:last-child)::after,
+    html body .resume-skill-item .list-unstyled > li:not(:last-child)::after { margin-left: -0.28em; }
+}
+
+@media print {
+    @page { margin: 0.65cm !important; }
+    html body p, html body li, html body .chip { font-size: 9.2pt !important; line-height: 1.28 !important; }
+    html body .resume-timeline-item { margin-bottom: 0.25rem !important; }
+    html body .resume-section { margin-bottom: 0.3rem !important; }
+}
+
+@media print {
+    html body .resume-body { padding-top: 0.3rem !important; padding-bottom: 0.2rem !important; }
+    html body .resume-header .row > .col > .row { padding-top: 0.25rem !important; padding-bottom: 0.25rem !important; }
+    html body .resume-timeline-item-desc ul { padding-left: 1rem !important; }
+}
+
+@media print {
+    html body .list-inline > li:not(:last-child)::after,
+    html body .resume-skill-item .list-unstyled > li:not(:last-child)::after { content: none !important; }
+    html body .list-inline > li:not(:last-child) .chip::after,
+    html body .resume-skill-item .list-unstyled > li:not(:last-child) .chip::after { content: ","; }
+}
