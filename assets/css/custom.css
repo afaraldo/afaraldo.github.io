@@ -672,3 +672,173 @@ body {
     html body .list-inline > li:not(:last-child) .chip::after,
     html body .resume-skill-item .list-unstyled > li:not(:last-child) .chip::after { content: ","; }
 }
+
+/* ---- Print: white page, no timeline decoration (bar and dots were clipped at the margin) ---- */
+@media print {
+    html, html body { background: #fff !important; }
+    html body .resume-timeline::before,
+    html body .resume-timeline-item::before { display: none !important; }
+    html body .resume-timeline { padding-left: 0 !important; margin-left: 0 !important; border: 0 !important; }
+    html body .resume-timeline-item { padding-left: 0 !important; margin-left: 0 !important; }
+}
+
+/* =====================================================================
+   Typographic system
+   Display: Source Serif 4 (name, section titles, roles). Text: system sans.
+   Roles: name > section title > role > company/dates > body > chips.
+   Ink is dark navy, not mid-grey, so bold keywords have something to rise from.
+   ===================================================================== */
+@font-face {
+    font-family: "Source Serif 4";
+    font-style: normal;
+    font-weight: 600 700;
+    font-display: swap;
+    src: url("../fonts/SourceSerif4-latin.woff2") format("woff2");
+}
+
+:root {
+    --ink: #17212e;
+    --ink-soft: #3d4856;
+    --ink-meta: #5b6675;
+    --rule: #17212e;
+    --serif: "Source Serif 4", Georgia, "Times New Roman", serif;
+}
+
+body { color: var(--ink-soft); }
+
+.resume-body strong, .resume-body b { color: var(--ink); font-weight: 700; }
+
+.resume-header .name,
+.resume-section-title,
+.resume-position-title {
+    font-family: var(--serif);
+}
+
+.resume-header .name { font-weight: 700; letter-spacing: 0.01em; }
+
+.resume-section-title {
+    color: var(--ink);
+    font-weight: 700;
+    text-transform: none !important;
+    letter-spacing: 0;
+    font-size: 1.35rem;
+}
+.resume-section-title::after { height: 2px; background: var(--rule); }
+
+.resume-position-title { color: var(--ink); font-weight: 700; font-size: 1.15rem; }
+.resume-company-name, .resume-company-name a { color: var(--ink); font-weight: 600; }
+.resume-position-time { color: var(--ink-meta); font-size: 0.85rem; }
+.resume-timeline-item-desc-heading { color: var(--ink); font-weight: 600; font-size: 0.85rem; letter-spacing: 0.02em; }
+.resume-skills-cat { color: var(--ink); font-weight: 600; }
+.resume-degree { color: var(--ink); }
+.resume-degree-time { color: var(--ink-meta); }
+
+@media print {
+    html body { color: #262f3b !important; }
+    html body .resume-body strong, html body .resume-body b { color: #0d141c !important; font-weight: 700 !important; }
+
+    html body .resume-header .name { font-size: 22pt !important; letter-spacing: 0.01em !important; text-transform: none !important; }
+    html body .resume-header .title { font-size: 11.5pt !important; font-weight: 500 !important; }
+
+    html body h2.resume-section-title {
+        font-family: "Source Serif 4", Georgia, serif !important;
+        font-size: 13.5pt !important; font-weight: 700 !important; color: #0d141c !important;
+        text-transform: none !important; letter-spacing: 0 !important;
+        margin: 0.55rem 0 0.35rem !important; padding-bottom: 0.15rem !important;
+    }
+    html body h2.resume-section-title::after { height: 1.5px !important; background: #0d141c !important; }
+
+    html body .resume-position-title, html body h3 {
+        font-family: "Source Serif 4", Georgia, serif !important;
+        font-size: 11.5pt !important; font-weight: 700 !important; color: #0d141c !important;
+    }
+    html body .resume-company-name, html body .resume-company-name a { font-size: 10pt !important; font-weight: 700 !important; color: #0d141c !important; }
+    html body .resume-position-time { font-size: 8.8pt !important; color: #4a5462 !important; }
+    html body .resume-timeline-item-desc-heading { font-size: 8.8pt !important; font-weight: 700 !important; color: #0d141c !important; margin-top: 0.3rem !important; }
+    html body .resume-skills-cat { font-size: 9.2pt !important; font-weight: 700 !important; color: #0d141c !important; }
+    html body .resume-degree { color: #0d141c !important; font-size: 9.5pt !important; }
+    html body .resume-degree-time { color: #4a5462 !important; }
+
+    html body .summary-section p:first-child { font-size: 10.5pt !important; color: #1a232f !important; }
+}
+
+@media print {
+    html body .resume-body p, html body .resume-body li, html body .resume-body .chip,
+    html body .resume-timeline-item-desc, html body .resume-degree-org { color: #262f3b !important; }
+}
+
+@media print {
+    html body .resume-body h2.resume-section-title,
+    html body .col-lg-3 h2.resume-section-title,
+    html body .col-lg-9 h2.resume-section-title { font-size: 13.5pt !important; line-height: 1.25 !important; }
+    html body .col-lg-3 .resume-section-content,
+    html body .col-lg-3 ul, html body .col-lg-3 li { padding-left: 0 !important; margin-left: 0 !important; }
+    html body .resume-skill-item ul.list-inline, html body .resume-skill-item ul { padding-left: 0 !important; }
+    html body .resume-award-name { font-size: 9.5pt !important; font-weight: 700 !important; color: #0d141c !important; }
+    html body .resume-award-desc { font-size: 9.2pt !important; color: #4a5462 !important; }
+    html body .resume-degree-org { font-size: 9.2pt !important; }
+    html body .resume-degree-org .text-muted, html body .resume-degree-org small { font-size: 8.5pt !important; }
+    html body .resume-lang-name { font-weight: 600 !important; color: #0d141c !important; }
+}
+
+@media print {
+    html body section.resume-section.mb-5, html body section.resume-section { margin-bottom: 0.15rem !important; padding-bottom: 0 !important; }
+    html body .resume-section-content { margin-bottom: 0.2rem !important; }
+    html body h2.resume-section-title { margin-top: 0.35rem !important; }
+    html body .resume-timeline-item-desc ul:last-child, html body .resume-timeline { margin-bottom: 0 !important; padding-bottom: 0 !important; }
+}
+
+@media print {
+    html body .resume-header ul.list-unstyled { column-gap: 0.75rem !important; }
+    html body .resume-header ul.list-unstyled li, html body .resume-header .text-link { font-size: 9.5pt !important; }
+}
+
+/* Print: one left/right edge for every section (the row's negative gutter margin pushed experience outside the summary's edge) */
+@media print {
+    html body .resume-body > .row,
+    html body .resume-body .row { margin-left: 0 !important; margin-right: 0 !important; --bs-gutter-x: 0 !important; }
+    html body .resume-body > .row > [class*="col-"] { padding-left: 0 !important; padding-right: 0 !important; }
+}
+
+/* Print: breathing room between sections (more above a title than below it) */
+@media print {
+    html body section.resume-section.mb-5, html body section.resume-section { margin-bottom: 0.6rem !important; }
+    html body h2.resume-section-title { margin-top: 0.5rem !important; margin-bottom: 0.4rem !important; }
+    html body .resume-timeline-item { margin-bottom: 0.45rem !important; }
+}
+
+@media print {
+    html body .education-section li, html body .reference-section li { margin-bottom: 0.4rem !important; }
+    html body .education-section li:last-child, html body .reference-section li:last-child { margin-bottom: 0 !important; }
+    html body .resume-skill-item { margin-bottom: 0.3rem !important; }
+}
+
+/* Print: each job reads as its own block */
+@media print {
+    html body .resume-timeline-item + .resume-timeline-item {
+        margin-top: 0.7rem !important;
+        padding-top: 0.55rem !important;
+        border-top: 1px solid #c9d0d9 !important;
+    }
+    html body .resume-timeline-item-header { margin-bottom: 0.3rem !important; }
+    html body .resume-timeline-item-desc > p { margin-bottom: 0.35rem !important; }
+    html body .resume-timeline-item-desc ul { margin-bottom: 0.3rem !important; }
+    html body .resume-timeline-item-desc li { margin-bottom: 0.2rem !important; }
+    html body .resume-timeline-item-desc-heading { margin-top: 0.4rem !important; margin-bottom: 0.2rem !important; }
+}
+
+@media print {
+    @page { margin: 0.5cm 0.65cm !important; }
+    html body .resume-timeline-item + .resume-timeline-item { margin-top: 0.5rem !important; padding-top: 0.4rem !important; }
+    html body .resume-timeline-item-desc-heading { margin-top: 0.3rem !important; margin-bottom: 0.15rem !important; }
+    html body .resume-timeline-item-desc li { margin-bottom: 0.12rem !important; }
+}
+
+/* Section rules: real borders instead of a 1.5px ::after (it rasterised at 1px or 2px depending on page position) */
+.resume-section-title::after { display: none !important; }
+.resume-section-title { border-bottom: 2px solid var(--rule); padding-bottom: 0.35rem !important; }
+
+@media print {
+    html body h2.resume-section-title::after { display: none !important; }
+    html body h2.resume-section-title { border-bottom: 2px solid #0d141c !important; padding-bottom: 0.15rem !important; }
+}
